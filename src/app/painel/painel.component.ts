@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelComponent implements OnInit {
 
+  public instrucao: string = 'Traduza a frase:'
+
   constructor() { }
 
   ngOnInit(): void {
