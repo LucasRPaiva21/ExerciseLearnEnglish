@@ -13,7 +13,8 @@ export class PainelComponent implements OnInit {
   public frases: Frase[] = FRASES;
   public resposta: string = '';
   public rodada: number = 0;
-  public rodadaFrase: Frase = {fraseEng: '', frasePtBr: ''}
+  public rodadaFrase: Frase = {fraseEng: '', frasePtBr: ''};
+  public progresso: number = 0;
 
   constructor() { 
     this.atualizarRodada();
@@ -24,13 +25,22 @@ export class PainelComponent implements OnInit {
 
   public atualizaResposta(resposta: Event): void {
     this.resposta = (<HTMLInputElement>resposta.target).value;
+    console.log(this.resposta)
   }
 
   public verificarResposta(): void{
     if(this.resposta === this.rodadaFrase.frasePtBr){
+
+      //Atualizar rodada
       this.rodada++;
 
-      
+      //Avançar progresso
+      this.progresso = this.progresso + (100 / this.frases.length);
+
+
+
+
+
     }
   }
 
